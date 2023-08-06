@@ -1,0 +1,19 @@
+Strategies I've tried:
+
+*News Press Releases as leading indicators of price movement*
+Findings: 
+        - The source of news data (td thinkorswim screen captures) *may* suffer from high latency
+        - Creating a model of price movement for news headline features is difficult, and may not be predictiveenough. For simple word lookup model based on heuristics, many false positives result.
+        - Most large price/volume jumps are not accompanied by any news at all.
+        - News that is accompanied by price jumps are relatively rare (maybe 2 a week).
+
+*Technicals as a lagging indicator of price movement*
+Idea:
+        - Although technicals (momentum/trend following etc) have been tried in the past, they have not been tried through a mix of OCR of screen captures of technical scans and automated trade execution.
+        - Rudimentary scans of volume jumps show clear bias towards upward price movement (at least for lower market caps).
+        - It might be more time efficient to model the relationship between volume jumps and continued price hikes in order to determine optimal moving window averages for entry and exit conditions.
+Findings:
+        - model_voljump shows that concurrent volume and price jumps do not predict more than about 1% of possible profit assuming a hold window of within 1hour. The problem is that bid prices post indicator candle are likely not to execute (price continues higher before dropping below purchase price.
+=============================================
+Chaos based trading
+Price drops > 50 % within 1 hour may *partly* be over-reaction. Using models of such technicals to accurately estimate the price bottom and not a falling knife could prove lucrative.

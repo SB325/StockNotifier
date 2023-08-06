@@ -1,0 +1,6 @@
+stocks/TDA/DATASET/
+**/__pycache__/
+/stocks/TDA/tokens/
+*.pickle
+*.swp
+**/DATASET/
